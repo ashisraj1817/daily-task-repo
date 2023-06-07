@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Functions</title>
+    <script>
+        function filterNegativeNumbers() {
+            var numbers = document.getElementById("numbers").value.split(",");
+            var filteredNumbers = numbers.filter(function(number) {
+                return number >= 0;
+            });
+            document.getElementById("output").innerHTML = "Filtered Numbers: " + filteredNumbers.join(", ");
+        }
+
+        function getDifference(number) {
+            var difference = Math.abs(number - 13);
+            if (number > 13) {
+                return difference * 2;
+            } else {
+                return difference;
+            }
+        }
+
+        function calculateDifference() {
+            var number = parseFloat(document.getElementById("number").value);
+            var result = getDifference(number);
+            document.getElementById("output").innerHTML = "Difference: " + result;
+        }
+
+        function fibonacciSeries() {
+            var n = parseInt(document.getElementById("fibonacciNumber").value);
+            var fibonacci = [0, 1];
+            for (var i = 2; i <= n; i++) {
+                fibonacci[i] = fibonacci[i - 1] + fibonacci[i - 2];
+            }
+            document.getElementById("output").innerHTML = "Fibonacci Series: " + fibonacci.join(", ");
+        }
+
+        function sumMultiples() {
+            var sum = 0;
+            for (var i = 1; i < 1000; i++) {
+                if (i % 3 === 0 || i % 5 === 0) {
+                    sum += i;
+                }
+            }
+            document.getElementById("output").innerHTML = "Sum of Multiples: " + sum;
+        }
+
+        var cube = function(number) {
+            return number * number * number;
+        }
+
+        function calculateCube() {
+            var number = parseFloat(document.getElementById("cubeNumber").value);
+            var result = cube(number);
+            document.getElementById("output").innerHTML = "Cube of the Number: " + result;
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Functions</h1>
+
+    <h2>1. Filter Negative Numbers</h2>
+    <input type="text" id="numbers" placeholder="Enter numbers separated by commas">
+    <button onclick="filterNegativeNumbers()">Filter</button>
+
+    <h2>2. Get Difference</h2>
+    <input type="text" id="number" placeholder="Enter a number">
+    <button onclick="calculateDifference()">Calculate</button>
+
+    <h2>3. Fibonacci Series</h2>
+    <input type="text" id="fibonacciNumber" placeholder="Enter a number">
+    <button onclick="fibonacciSeries()">Generate</button>
+
+    <h2>4. Sum Multiples</h2>
+    <button onclick="sumMultiples()">Calculate</button>
+
+    <h2>5. Cube of a Number</h2>
+    <input type="text" id="cubeNumber" placeholder="Enter a number">
+    <button onclick="calculateCube()">Calculate</button>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+</body>
+</html>
