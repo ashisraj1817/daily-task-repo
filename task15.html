@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array Operations</title>
+    <script>
+        function sortArray() {
+            var array = document.getElementById("array").value.split(",");
+            var sortedArray = array.sort();
+            document.getElementById("output").innerHTML = "Sorted Array: " + sortedArray.join(", ");
+        }
+
+        function concatenateArrays() {
+            var array1 = document.getElementById("array1").value.split(",");
+            var array2 = document.getElementById("array2").value.split(",");
+            var concatenatedArray = array1.concat(array2);
+            document.getElementById("output").innerHTML = "Concatenated Array: " + concatenatedArray.join(", ");
+        }
+
+        function removeFirstElement() {
+            var array = document.getElementById("array").value.split(",");
+            array.shift();
+            document.getElementById("output").innerHTML = "Modified Array: " + array.join(", ");
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Array Operations</h1>
+
+    <h2>1. Sort Array</h2>
+    <input type="text" id="array" placeholder="Enter array elements separated by commas">
+    <button onclick="sortArray()">Sort</button>
+
+    <h2>2. Concatenate Arrays</h2>
+    <input type="text" id="array1" placeholder="Enter first array elements separated by commas">
+    <input type="text" id="array2" placeholder="Enter second array elements separated by commas">
+    <button onclick="concatenateArrays()">Concatenate</button>
+
+    <h2>3. Remove First Element</h2>
+    <input type="text" id="array" placeholder="Enter array elements separated by commas">
+    <button onclick="removeFirstElement()">Remove</button>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+</body>
+</html>
