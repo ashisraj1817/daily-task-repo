@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Programs</title>
+    <script>
+        function printNameAndAddress() {
+            var name = document.getElementById("name").value;
+            var address = document.getElementById("address").value;
+            var result = "Name: " + name + "<br>Address: " + address;
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function checkVariableType() {
+            var variable1 = document.getElementById("variable1").value;
+            var variable2 = document.getElementById("variable2").value;
+            var result = "The values and data types are ";
+            if (variable1 === variable2 && typeof variable1 === typeof variable2) {
+                result += "the same.";
+            } else {
+                result += "not the same.";
+            }
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function capitalizeStrings() {
+            var string1 = document.getElementById("string1").value;
+            var string2 = document.getElementById("string2").value;
+            var result = string1.toUpperCase() + " " + string2.toUpperCase();
+            document.getElementById("output").innerHTML = result;
+        }
+
+        function convertToBytes() {
+            var string = document.getElementById("string").value;
+            var bytes = new Blob([string]).size;
+            document.getElementById("output").innerHTML = "Length in bytes: " + bytes;
+        }
+
+        function roundToDigits() {
+            var number = parseFloat(document.getElementById("number").value);
+            var digits = parseInt(document.getElementById("digits").value);
+            var roundedNumber = number.toFixed(digits);
+            document.getElementById("output").innerHTML = "Rounded number: " + roundedNumber;
+        }
+    </script>
+</head>
+<body>
+    <h1>JavaScript Programs</h1>
+
+    <h2>1. Print Name and Address</h2>
+    <input type="text" id="name" placeholder="Enter your name">
+    <input type="text" id="address" placeholder="Enter your address">
+    <button onclick="printNameAndAddress()">Print</button>
+
+    <h2>2. Check Variable Type</h2>
+    <input type="text" id="variable1" placeholder="Enter variable 1">
+    <input type="text" id="variable2" placeholder="Enter variable 2">
+    <button onclick="checkVariableType()">Check</button>
+
+    <h2>3. Capitalize Strings</h2>
+    <input type="text" id="string1" placeholder="Enter string 1">
+    <input type="text" id="string2" placeholder="Enter string 2">
+    <button onclick="capitalizeStrings()">Capitalize</button>
+
+    <h2>4. Convert Length to Bytes</h2>
+    <input type="text" id="string" placeholder="Enter string">
+    <button onclick="convertToBytes()">Convert</button>
+
+    <h2>5. Round Number</h2>
+    <input type="text" id="number" placeholder="Enter number">
+    <input type="text" id="digits" placeholder="Enter digits">
+    <button onclick="roundToDigits()">Round</button>
+
+    <h2>Output</h2>
+    <div id="output"></div>
+</body>
+</html>
