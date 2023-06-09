@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Form & DOM Manipulation</title>
+    <script>
+        function showBasicInformation() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var address = document.getElementById("address").value;
+
+            var result = "Name: " + name + "<br>Email: " + email + "<br>Address: " + address;
+            document.getElementById("basicInfo").innerHTML = result;
+        }
+
+        // Function to change the image inside an img tag on button click
+        function changeImage() {
+            var img = document.getElementById("image");
+            img.src = "image2.jpeg";
+        }
+
+        function increaseFontSize() {
+            var textElement = document.getElementById("text");
+            var currentSize = parseFloat(window.getComputedStyle(textElement).fontSize);
+            textElement.style.fontSize = (currentSize + 2) + "px";
+        }
+
+        function decreaseFontSize() {
+            var textElement = document.getElementById("text");
+            var currentSize = parseFloat(window.getComputedStyle(textElement).fontSize);
+            textElement.style.fontSize = (currentSize - 2) + "px";
+        }
+
+        function showDateTime() {
+            var dateTimeElement = document.getElementById("dateTime");
+            var dateTime = new Date();
+            dateTimeElement.innerHTML = "Current Date & Time: " + dateTime;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript Form & DOM Manipulation</h1>
+
+    <h2>1. Basic Information Form</h2>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email"><br>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address"><br>
+
+        <button type="button" onclick="showBasicInformation()">Show Information</button>
+    </form>
+
+    <div id="basicInfo"></div>
+
+    <h3>Image:</h3>
+    <img id="image" src="./image1.jpeg" alt="Original Image">
+    <button type="button" onclick="changeImage()">Change Image</button>
+
+    <h2>3. Font Size</h2>
+    <p id="text">Hello</p>
+    <button type="button" onclick="increaseFontSize()">Increase Font Size</button>
+    <button type="button" onclick="decreaseFontSize()">Decrease Font Size</button>
+
+    <h2>4. Current Date & Time</h2>
+    <button type="button" onclick="showDateTime()">Show Date & Time</button>
+    <p id="dateTime"></p>
+</body>
+
+</html>
